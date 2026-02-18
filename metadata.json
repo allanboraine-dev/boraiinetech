@@ -1,0 +1,7 @@
+{
+  "name": "Boraine Tech - Premium AI & ICT Solutions",
+  "description": "A high-end, production-ready website for Boraine Tech, an ICT Support and AI Agency based in Kimberley, South Africa. Features an integrated AI receptionist with memory and context awareness.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

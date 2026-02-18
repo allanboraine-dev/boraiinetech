@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://borainetech.co.za/sitemap.xml

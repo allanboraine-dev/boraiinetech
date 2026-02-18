@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boraine Tech | Future-Ready ICT & AI Solutions in Kimberley</title>
+  <meta name="description"
+    content="Boraine Tech: Kimberley's premier ICT Support and AI Agency. Managed IT, AI Automation, and Digital Transformation tailored for South African businesses. Future-proof your digital infrastructure with Allan Boraine." />
+  <meta name="keywords"
+    content="ICT Support Kimberley, AI Agency South Africa, Managed IT Services, Cybersecurity Kimberley, Digital Transformation, Allan Boraine, Boraine Tech" />
+  <meta name="author" content="Allan Boraine" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://borainetech.co.za/" />
+  <meta property="og:title" content="Boraine Tech | Future-Ready ICT & AI Solutions" />
+  <meta property="og:description"
+    content="Kimberley's premier ICT Support and AI Agency. Managed IT, AI Automation, and Digital Transformation." />
+  <meta property="og:image" content="https://borainetech.co.za/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://borainetech.co.za/" />
+  <meta property="twitter:title" content="Boraine Tech | Future-Ready ICT & AI Solutions" />
+  <meta property="twitter:description"
+    content="Kimberley's premier ICT Support and AI Agency. Managed IT, AI Automation, and Digital Transformation." />
+  <meta property="twitter:image" content="https://borainetech.co.za/og-image.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+    rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          colors: {
+            boraine: {
+              50: '#f0f4f8',
+              100: '#d9e2ec',
+              200: '#bcccdc',
+              300: '#9fb3c8',
+              400: '#829ab1',
+              500: '#627d98',
+              600: '#486581',
+              700: '#334e68',
+              800: '#243b53',
+              900: '#102a43',
+              accent: '#0052cc',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .glass-panel-dark {
+      background: rgba(16, 42, 67, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .bg-grid-pattern {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: pan-grid 60s linear infinite;
+    }
+
+    @keyframes pan-grid {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: 50px 50px;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-blue-200 selection:text-blue-900">
+  <div id="root"></div>
+  <script type="module" src="./index.tsx"></script>
+</body>
+
+</html>
