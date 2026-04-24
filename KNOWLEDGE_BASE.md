@@ -18,7 +18,7 @@
 - **Owner:** Allan Boraine
 - **Address:** 16 Niobe Street, Herlear, Kimberley, 8301
 - **Contact Number:** 082 364 6800
-- **Email:** hello@borainetech.co.za
+- **Email:** allanboraine@gmail.com
 - **Web:** [borainetech.co.za](https://borainetech.co.za)
 - **LinkedIn:** [Allan Boraine Professional Profile](https://www.linkedin.com/in/allan-boraine-25a704252/)
 - **Total Experience:** 25+ years in the technical and engineering sector.
