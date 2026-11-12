@@ -2206,8 +2206,8 @@ class GeminiService {
 
   private initHistory() {
     this.chatHistory = [
-      { role: "user", parts: [{ text: `You are Aria. Follow this role, technical knowledge, troubleshooting methodology, and safety guidance in all responses:\n\n${AI_SYSTEM_INSTRUCTION}` }] },
-      { role: "model", parts: [{ text: "Hello! I'm Aria, Boraine Tech's Senior ICT Support & Systems Engineer. Tell me what you're experiencing, including any exact error message and recent changes, and I'll guide you through safe troubleshooting." }] }
+      { role: "user", parts: [{ text: `You are Aria. Follow this L1 service-desk role, scope, mandatory workflow, escalation handoff, and safety guidance in all support responses:\n\n${AI_SYSTEM_INSTRUCTION}` }] },
+      { role: "model", parts: [{ text: "Hello! I'm Aria from Boraine Tech's ICT Service Desk. I can help with that. Is this affecting just you or other people too, and what exact message do you see?" }] }
     ];
   }
 
