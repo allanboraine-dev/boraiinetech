@@ -58,8 +58,8 @@ function App() {
             aria-label="Boraine Tech home"
             className={`flex shrink-0 flex-col items-start whitespace-nowrap font-sans font-black uppercase leading-none transition-colors ${scrolled ? 'text-boraine-900' : 'text-white'}`}
           >
-            <span className="text-2xl tracking-tight sm:text-3xl lg:text-4xl">BOR<span className="text-yellow-500">AI</span>NE</span>
-            <span className="mt-1 pl-0.5 text-xs tracking-[0.45em] text-blue-300 sm:text-sm">TECH</span>
+            <span className="text-3xl tracking-tight sm:text-4xl lg:text-5xl">BOR<span className="text-yellow-500">AI</span>NE</span>
+            <span className="mt-1 pl-0.5 text-sm tracking-[0.45em] text-blue-300 sm:text-base">TECH</span>
           </a>
 
           {/* Desktop Nav & Portal */}
