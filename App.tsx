@@ -48,44 +48,27 @@ function App() {
   }, []);
 
   const navLinks = ['Services', 'SOLO', 'About', 'Why Us', 'Contact'];
-  // Split links for desktop symmetry
-  const leftLinks = navLinks.slice(0, 2);
-  const rightLinks = navLinks.slice(2);
 
   return (
     <div className="font-sans text-slate-900 overflow-x-hidden">
       {/* Navigation */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
-        <div className="container mx-auto px-6 flex justify-between items-center relative">
-
-          {/* Desktop Left Nav */}
-          <div className="hidden lg:flex items-center gap-8 w-1/3 justify-start">
-            {leftLinks.map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase().replace(' ', '-')}`}
-                className={`font-medium text-sm tracking-wide uppercase hover:text-yellow-500 transition-colors ${scrolled ? 'text-boraine-700' : 'text-white'}`}
-              >
-                {item}
-              </a>
-            ))}
-          </div>
-
-          {/* Centered Logo */}
-          <a href="#" className="absolute left-1/2 top-[56%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group z-10 w-auto text-center">
+        <div className="container mx-auto px-6 flex justify-between items-center gap-4">
+          {/* Brand aligned to the hero's left edge */}
+          <a href="#" className="flex shrink-0 flex-col items-center text-center group">
             {/* Logo Text */}
-            <div className={`text-5xl lg:text-7xl font-serif font-black tracking-tighter leading-none transition-colors duration-300 ${scrolled ? 'text-boraine-900' : 'text-white'}`}>
+            <div className={`text-3xl sm:text-4xl font-serif font-black tracking-tighter leading-none transition-colors duration-300 ${scrolled ? 'text-boraine-900' : 'text-white'}`}>
               BOR<span className="text-yellow-500 drop-shadow-2xl">AI</span>NE
             </div>
             {/* Subtext */}
-            <div className={`text-base lg:text-2xl font-sans font-black tracking-[0.5em] uppercase mt-1 transition-colors duration-300 ${scrolled ? 'text-blue-600' : 'text-blue-300'}`}>
+            <div className={`text-xs sm:text-sm font-sans font-black tracking-[0.5em] uppercase mt-1 transition-colors duration-300 ${scrolled ? 'text-blue-600' : 'text-blue-300'}`}>
               TECH
             </div>
           </a>
 
-          {/* Desktop Right Nav & Portal */}
-          <div className="hidden lg:flex items-center gap-8 w-1/3 justify-end">
-            {rightLinks.map((item) => (
+          {/* Desktop Nav & Portal */}
+          <div className="hidden lg:flex items-center gap-5">
+            {navLinks.map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(' ', '-')}`}
