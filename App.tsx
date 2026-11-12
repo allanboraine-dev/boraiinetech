@@ -358,19 +358,16 @@ function App() {
                 alt="Boraine Tech emblem"
                 className="rounded-2xl shadow-2xl relative z-10 w-full object-contain h-[600px] bg-slate-950"
               />
-              <div className="absolute bottom-10 -right-10 bg-white p-8 rounded-xl shadow-xl z-20 max-w-xs hidden md:block border border-gray-100">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="text-4xl font-bold text-blue-600">{YEARS_EXPERIENCE}</div>
-                  <div className="text-sm font-medium text-gray-600">Years of<br />Experience</div>
-                </div>
-                <p className="text-gray-500 text-sm italic">"Technology is best when it brings people together."</p>
-              </div>
             </div>
             <div className="lg:w-1/2 space-y-8">
               <h2 className="text-4xl font-serif font-bold text-boraine-900">
                 Deep Roots in Kimberley,<br />
                 World-Class Standards.
               </h2>
+              <div className="inline-flex items-center gap-4 rounded-xl border border-gray-100 bg-boraine-50 px-6 py-4 shadow-sm">
+                <div className="text-4xl font-bold text-blue-600">{YEARS_EXPERIENCE}</div>
+                <div className="text-sm font-medium text-gray-600">Years of Experience</div>
+              </div>
               <p className="text-lg text-boraine-600 leading-relaxed">
                 Founded by {OWNER_NAME}, Boraine Tech emerged from a simple observation: businesses in the Northern Cape deserve the same level of technological sophistication as those in Silicon Valley.
               </p>
