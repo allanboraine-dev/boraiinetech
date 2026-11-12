@@ -74,13 +74,10 @@ function App() {
           <a
             href="#"
             aria-label="Boraine Tech home"
-            className="absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center"
+            className={`absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center whitespace-nowrap font-sans font-black uppercase leading-none transition-colors ${scrolled ? 'text-boraine-900' : 'text-white'}`}
           >
-            <img
-              src="/boraine-tech-emblem.png"
-              alt="Boraine Tech"
-              className="h-16 w-16 rounded-full object-cover shadow-lg sm:h-20 sm:w-20 lg:h-24 lg:w-24"
-            />
+            <span className="text-xl tracking-tight sm:text-2xl lg:text-4xl">BORAINE</span>
+            <span className="mt-1 text-[10px] tracking-[0.45em] text-blue-300 sm:text-xs lg:text-sm">TECH</span>
           </a>
 
           {/* Desktop Right Nav & Portal */}
