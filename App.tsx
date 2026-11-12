@@ -5,6 +5,7 @@ import { AIReceptionist } from './components/AIReceptionist';
 import { COMPANY_NAME, SERVICES, TESTIMONIALS, OWNER_NAME, PHONE, EMAIL, LOCATION, YEARS_EXPERIENCE, LINKEDIN_URL } from './constants';
 import { ServiceItem } from './types';
 import emailjs from '@emailjs/browser';
+import boraineTechEmblem from './assets/boraine-tech-emblem.png';
 
 function App() {
   console.log("App mounting...");
@@ -353,9 +354,9 @@ function App() {
               <div className="absolute -top-10 -left-10 w-40 h-40 bg-gray-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
               <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob" style={{ animationDelay: '2s' }}></div>
               <img
-                src="https://picsum.photos/id/60/800/1000"
-                alt="Modern Office in Kimberley"
-                className="rounded-2xl shadow-2xl relative z-10 w-full object-cover h-[600px]"
+                src={boraineTechEmblem}
+                alt="Boraine Tech emblem"
+                className="rounded-2xl shadow-2xl relative z-10 w-full object-contain h-[600px] bg-slate-950"
               />
               <div className="absolute bottom-10 -right-10 bg-white p-8 rounded-xl shadow-xl z-20 max-w-xs hidden md:block border border-gray-100">
                 <div className="flex items-center gap-4 mb-4">
