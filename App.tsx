@@ -47,42 +47,24 @@ function App() {
   }, []);
 
   const navLinks = ['Services', 'SOLO', 'About', 'Why Us', 'Contact'];
-  // Split links for desktop symmetry
-  const leftLinks = navLinks.slice(0, 2);
-  const rightLinks = navLinks.slice(2);
 
   return (
     <div className="font-sans text-slate-900 overflow-x-hidden">
       {/* Navigation */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
-        <div className="container mx-auto px-6 flex justify-between items-center relative">
-
-          {/* Desktop Left Nav */}
-          <div className="hidden lg:flex items-center gap-8 w-1/3 justify-start">
-            {leftLinks.map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase().replace(' ', '-')}`}
-                className={`font-medium text-sm tracking-wide uppercase hover:text-yellow-500 transition-colors ${scrolled ? 'text-boraine-700' : 'text-white'}`}
-              >
-                {item}
-              </a>
-            ))}
-          </div>
-
-          {/* Centered Logo */}
+        <div className="container mx-auto px-6 flex justify-between items-center">
           <a
             href="#"
             aria-label="Boraine Tech home"
-            className={`absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center whitespace-nowrap font-sans font-black uppercase leading-none transition-colors ${scrolled ? 'text-boraine-900' : 'text-white'}`}
+            className={`flex shrink-0 flex-col items-start whitespace-nowrap font-sans font-black uppercase leading-none transition-colors ${scrolled ? 'text-boraine-900' : 'text-white'}`}
           >
-            <span className="text-xl tracking-tight sm:text-2xl lg:text-4xl">BORAINE</span>
-            <span className="mt-1 text-[10px] tracking-[0.45em] text-blue-300 sm:text-xs lg:text-sm">TECH</span>
+            <span className="text-xl tracking-tight sm:text-2xl lg:text-3xl">BOR<span className="text-yellow-500">AI</span>NE</span>
+            <span className="mt-1 pl-0.5 text-[10px] tracking-[0.45em] text-blue-300 sm:text-xs">TECH</span>
           </a>
 
-          {/* Desktop Right Nav & Portal */}
-          <div className="hidden lg:flex items-center gap-8 w-1/3 justify-end">
-            {rightLinks.map((item) => (
+          {/* Desktop Nav & Portal */}
+          <div className="hidden lg:flex items-center gap-6">
+            {navLinks.map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(' ', '-')}`}
@@ -96,9 +78,9 @@ function App() {
             </Button>
           </div>
 
-          {/* Mobile Toggle (Absolute Right) */}
+          {/* Mobile Toggle */}
           <button
-            className="lg:hidden absolute right-6 text-boraine-900 z-20 p-2"
+            className="lg:hidden text-boraine-900 z-20 p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ?
