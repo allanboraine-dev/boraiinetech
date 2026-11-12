@@ -71,15 +71,16 @@ function App() {
           </div>
 
           {/* Centered Logo */}
-          <a href="#" className="absolute left-1/2 top-[56%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group z-10 w-auto text-center">
-            {/* Logo Text */}
-            <div className={`text-5xl lg:text-7xl font-serif font-black tracking-tighter leading-none transition-colors duration-300 ${scrolled ? 'text-boraine-900' : 'text-white'}`}>
-              BOR<span className="text-yellow-500 drop-shadow-2xl">AI</span>NE
-            </div>
-            {/* Subtext */}
-            <div className={`text-base lg:text-2xl font-sans font-black tracking-[0.5em] uppercase mt-1 transition-colors duration-300 ${scrolled ? 'text-blue-600' : 'text-blue-300'}`}>
-              TECH
-            </div>
+          <a
+            href="#"
+            aria-label="Boraine Tech home"
+            className="absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center"
+          >
+            <img
+              src="/boraine-tech-emblem.png"
+              alt="Boraine Tech"
+              className="h-16 w-16 rounded-full object-cover shadow-lg sm:h-20 sm:w-20 lg:h-24 lg:w-24"
+            />
           </a>
 
           {/* Desktop Right Nav & Portal */}
@@ -405,9 +406,9 @@ function App() {
               <div className="absolute -top-10 -left-10 w-40 h-40 bg-gray-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
               <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob" style={{ animationDelay: '2s' }}></div>
               <img
-                src="https://picsum.photos/id/60/800/1000"
-                alt="Modern Office in Kimberley"
-                className="rounded-2xl shadow-2xl relative z-10 w-full object-cover h-[600px]"
+                src="/boraine-tech-emblem.png"
+                alt="Boraine Tech emblem"
+                className="rounded-2xl shadow-2xl relative z-10 w-full bg-slate-950 object-contain h-[600px]"
               />
               <div className="absolute bottom-10 -right-10 bg-white p-8 rounded-xl shadow-xl z-20 max-w-xs hidden md:block border border-gray-100">
                 <div className="flex items-center gap-4 mb-4">
