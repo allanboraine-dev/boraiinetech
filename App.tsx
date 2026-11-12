@@ -46,7 +46,7 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = ['Services', 'About', 'Why Us', 'Contact'];
+  const navLinks = ['Services', 'SOLO', 'About', 'Why Us', 'Contact'];
   // Split links for desktop symmetry
   const leftLinks = navLinks.slice(0, 2);
   const rightLinks = navLinks.slice(2);
@@ -301,6 +301,50 @@ function App() {
         </div>
       </section>
 
+      {/* SOLO Featured Product */}
+      <section id="solo" className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-950 via-boraine-900 to-blue-950 p-8 text-white shadow-2xl lg:p-16">
+            <div className="absolute -right-20 -top-24 h-80 w-80 rounded-full bg-blue-500/20 blur-3xl"></div>
+            <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
+              <div>
+                <p className="mb-4 text-sm font-bold uppercase tracking-[0.25em] text-blue-300">Built by Boraine Tech</p>
+                <h2 className="mb-6 text-4xl font-serif font-bold lg:text-5xl">Meet SOLO</h2>
+                <p className="mb-8 max-w-xl text-lg leading-relaxed text-slate-200">
+                  A zero-commission e-hailing platform built for South Africa. Riders book at no charge, while drivers keep 100% of their fares with no per-trip platform cuts.
+                </p>
+                <a
+                  href="https://solo-lemon.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg bg-yellow-500 px-6 py-3 font-bold text-slate-950 transition-colors hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-300"
+                >
+                  Explore SOLO <ArrowRight size={18} />
+                </a>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                  <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-blue-300">For riders</p>
+                  <p className="text-2xl font-bold">100% free</p>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-300">Download and use the rider app with no subscription or monthly fee.</p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                  <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-blue-300">For drivers</p>
+                  <p className="text-2xl font-bold">14 days free</p>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-300">Then R499/month, with zero trip commissions and 100% of rider fares kept.</p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm sm:col-span-2">
+                  <p className="text-sm leading-relaxed text-slate-300">
+                    Available nationwide with verified drivers and real-time ride tracking.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About / Trust Section */}
       <section id="about" className="py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-6">
@@ -485,6 +529,7 @@ function App() {
               <h4 className="font-bold mb-4 text-lg">Company</h4>
               <ul className="space-y-2 text-slate-400 text-sm">
                 <li><a href="#" className="hover:text-blue-400">About Allan Boraine</a></li>
+                <li><a href="https://solo-lemon.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">SOLO E-Hailing Platform</a></li>
                 <li><a href="#" className="hover:text-blue-400">Careers</a></li>
                 <li><a href="#" className="hover:text-blue-400">Privacy Policy</a></li>
                 <li><a href="#" className="hover:text-blue-400">Terms of Service</a></li>
