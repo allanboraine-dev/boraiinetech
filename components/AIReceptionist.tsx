@@ -5,6 +5,7 @@ import { Message, BookingDetails } from '../types';
 import emailjs from '@emailjs/browser';
 
 export const AIReceptionist: React.FC = () => {
+  const isGeminiConfigured = Boolean(import.meta.env.VITE_GEMINI_API_KEY && import.meta.env.VITE_GEMINI_API_KEY.trim().length > 10);
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -184,7 +185,7 @@ export const AIReceptionist: React.FC = () => {
             </div>
             <div className="text-center mt-2">
               <span className="text-[10px] text-boraine-400 flex items-center justify-center gap-1">
-                <Sparkles size={10} /> Powered by Gemini
+                <Sparkles size={10} /> {isGeminiConfigured ? 'Powered by Gemini' : 'Fallback support mode active'}
               </span>
             </div>
           </div>

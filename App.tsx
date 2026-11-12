@@ -5,7 +5,6 @@ import { AIReceptionist } from './components/AIReceptionist';
 import { COMPANY_NAME, SERVICES, TESTIMONIALS, OWNER_NAME, PHONE, EMAIL, LOCATION, YEARS_EXPERIENCE, LINKEDIN_URL } from './constants';
 import { ServiceItem } from './types';
 import emailjs from '@emailjs/browser';
-import boraineTechEmblem from './assets/boraine-tech-emblem.png';
 
 function App() {
   console.log("App mounting...");
@@ -48,27 +47,44 @@ function App() {
   }, []);
 
   const navLinks = ['Services', 'SOLO', 'About', 'Why Us', 'Contact'];
+  // Split links for desktop symmetry
+  const leftLinks = navLinks.slice(0, 2);
+  const rightLinks = navLinks.slice(2);
 
   return (
     <div className="font-sans text-slate-900 overflow-x-hidden">
       {/* Navigation */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
-        <div className="container mx-auto px-6 flex justify-between items-center gap-4">
-          {/* Brand aligned to the hero's left edge */}
-          <a href="#" className="flex shrink-0 flex-col items-center text-center group">
+        <div className="container mx-auto px-6 flex justify-between items-center relative">
+
+          {/* Desktop Left Nav */}
+          <div className="hidden lg:flex items-center gap-8 w-1/3 justify-start">
+            {leftLinks.map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase().replace(' ', '-')}`}
+                className={`font-medium text-sm tracking-wide uppercase hover:text-yellow-500 transition-colors ${scrolled ? 'text-boraine-700' : 'text-white'}`}
+              >
+                {item}
+              </a>
+            ))}
+          </div>
+
+          {/* Centered Logo */}
+          <a href="#" className="absolute left-1/2 top-[56%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group z-10 w-auto text-center">
             {/* Logo Text */}
-            <div className={`text-3xl sm:text-4xl font-serif font-black tracking-tighter leading-none transition-colors duration-300 ${scrolled ? 'text-boraine-900' : 'text-white'}`}>
+            <div className={`text-5xl lg:text-7xl font-serif font-black tracking-tighter leading-none transition-colors duration-300 ${scrolled ? 'text-boraine-900' : 'text-white'}`}>
               BOR<span className="text-yellow-500 drop-shadow-2xl">AI</span>NE
             </div>
             {/* Subtext */}
-            <div className={`text-xs sm:text-sm font-sans font-black tracking-[0.5em] uppercase mt-1 transition-colors duration-300 ${scrolled ? 'text-blue-600' : 'text-blue-300'}`}>
+            <div className={`text-base lg:text-2xl font-sans font-black tracking-[0.5em] uppercase mt-1 transition-colors duration-300 ${scrolled ? 'text-blue-600' : 'text-blue-300'}`}>
               TECH
             </div>
           </a>
 
-          {/* Desktop Nav & Portal */}
-          <div className="hidden lg:flex items-center gap-5">
-            {navLinks.map((item) => (
+          {/* Desktop Right Nav & Portal */}
+          <div className="hidden lg:flex items-center gap-8 w-1/3 justify-end">
+            {rightLinks.map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(' ', '-')}`}
@@ -282,6 +298,58 @@ function App() {
               </div>
             ))}
           </div>
+
+          <div className="mt-20 space-y-8">
+            <div className="mb-6 text-center">
+              <h3 className="text-3xl font-serif font-bold text-boraine-900">Popular Service Packages</h3>
+            </div>
+
+            <div className="grid gap-8 xl:grid-cols-2">
+              <div className="overflow-hidden rounded-[30px] border border-slate-200 bg-[#0f2f53] shadow-xl text-white">
+                <div className="border-b border-white/10 px-6 py-5">
+                  <p className="text-xs font-bold uppercase tracking-[0.25em] text-blue-300">Website Design</p>
+                  <h4 className="mt-2 text-3xl font-black uppercase tracking-tight">Fast, modern websites & online stores</h4>
+                </div>
+                <img src="/website-packages.jpg" alt="Boraine Tech website packages" className="w-full h-64 object-cover" />
+                <div className="grid gap-4 p-6 sm:grid-cols-2">
+                  {[
+                    { title: 'Landing Pages', price: 'R2,800', text: '1-page lead-gen WhatsApp setup' },
+                    { title: 'Business Sites', price: 'R5,800', text: '3-5 page SME showcase' },
+                    { title: 'E-Commerce Stores', price: 'R9,800', text: 'Shop setup & courier integration' },
+                    { title: 'SEO & Maintenance', price: 'R2,450/mo', text: 'Google rankings & monthly support' }
+                  ].map((packageItem) => (
+                    <div key={packageItem.title} className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                      <p className="text-sm font-bold uppercase tracking-[0.18em] text-blue-200">{packageItem.title}</p>
+                      <p className="mt-3 text-2xl font-black text-yellow-400">{packageItem.price}</p>
+                      <p className="mt-2 text-sm leading-relaxed text-slate-200">{packageItem.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="overflow-hidden rounded-[30px] border border-slate-200 bg-[#f5f3f0] shadow-xl text-slate-900">
+                <div className="border-b border-slate-200 px-6 py-5">
+                  <p className="text-xs font-bold uppercase tracking-[0.25em] text-blue-600">IT Support</p>
+                  <h4 className="mt-2 text-3xl font-black uppercase tracking-tight">Reliable IT support for your business</h4>
+                </div>
+                <img src="/it-support.jpg" alt="Boraine Tech IT support plans" className="w-full h-64 object-cover" />
+                <div className="grid gap-4 p-6 sm:grid-cols-2">
+                  {[
+                    { title: 'Basic Remote', price: 'R450/mo', text: 'Remote helpdesk, security checks, patch management' },
+                    { title: 'Standard Support', price: 'R750/mo', text: 'Hybrid support & cloud backups' },
+                    { title: 'Premium SLA', price: 'R1,200/mo', text: 'Unlimited remote and on-site support' },
+                    { title: 'Ad-Hoc / Urgent', price: 'R550/hr', text: 'Diagnostics, network setups and emergency repairs' }
+                  ].map((packageItem) => (
+                    <div key={packageItem.title} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                      <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-700">{packageItem.title}</p>
+                      <p className="mt-3 text-2xl font-black text-boraine-900">{packageItem.price}</p>
+                      <p className="mt-2 text-sm leading-relaxed text-slate-600">{packageItem.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -337,20 +405,23 @@ function App() {
               <div className="absolute -top-10 -left-10 w-40 h-40 bg-gray-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
               <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob" style={{ animationDelay: '2s' }}></div>
               <img
-                src={boraineTechEmblem}
-                alt="Boraine Tech emblem"
-                className="rounded-2xl shadow-2xl relative z-10 w-full object-contain h-[600px] bg-slate-950"
+                src="https://picsum.photos/id/60/800/1000"
+                alt="Modern Office in Kimberley"
+                className="rounded-2xl shadow-2xl relative z-10 w-full object-cover h-[600px]"
               />
+              <div className="absolute bottom-10 -right-10 bg-white p-8 rounded-xl shadow-xl z-20 max-w-xs hidden md:block border border-gray-100">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="text-4xl font-bold text-blue-600">{YEARS_EXPERIENCE}</div>
+                  <div className="text-sm font-medium text-gray-600">Years of<br />Experience</div>
+                </div>
+                <p className="text-gray-500 text-sm italic">"Technology is best when it brings people together."</p>
+              </div>
             </div>
             <div className="lg:w-1/2 space-y-8">
               <h2 className="text-4xl font-serif font-bold text-boraine-900">
                 Deep Roots in Kimberley,<br />
                 World-Class Standards.
               </h2>
-              <div className="inline-flex items-center gap-4 rounded-xl border border-gray-100 bg-boraine-50 px-6 py-4 shadow-sm">
-                <div className="text-4xl font-bold text-blue-600">{YEARS_EXPERIENCE}</div>
-                <div className="text-sm font-medium text-gray-600">Years of Experience</div>
-              </div>
               <p className="text-lg text-boraine-600 leading-relaxed">
                 Founded by {OWNER_NAME}, Boraine Tech emerged from a simple observation: businesses in the Northern Cape deserve the same level of technological sophistication as those in Silicon Valley.
               </p>

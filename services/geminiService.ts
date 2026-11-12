@@ -2191,14 +2191,16 @@ class GeminiService {
   private useAI = false;
 
   constructor() {
-    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-    if (apiKey?.length > 10) {
+    const apiKey = (import.meta.env.VITE_GEMINI_API_KEY ?? '').trim();
+    if (apiKey.length > 10) {
       try {
         this.genAI = new GoogleGenerativeAI(apiKey);
         this.model = this.genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
         this.useAI = true;
         this.initHistory();
-      } catch { this.useAI = false; }
+      } catch {
+        this.useAI = false;
+      }
     }
   }
 
@@ -2291,7 +2293,9 @@ Based on your responses, I'll guide you through the appropriate troubleshooting 
         const text = result.response.text();
         this.chatHistory.push({ role: "model", parts: [{ text }] });
         return { text };
-      } catch { this.useAI = false; }
+      } catch {
+        this.useAI = false;
+      }
     }
 
     const response = this.getResponse(userMessage);
